@@ -54,17 +54,15 @@ def extract_pois_from_osm(osm_file, output_csv):
 
 if __name__ == "__main__":
     osm_file_path = script_dir + "/data/poi_dataset/UK/"
-    # state_list = ['AZ', 'DE', 'ID', 'IL', 'IN', 'LA']
-    # state_list = ['MO', 'NJ', 'NV', 'PA', 'TN']
-    state_list = ['XGL']
+    locations = ['Birmingham','Manchester']
 
-    for state in state_list :
-        osm_path = osm_file_path + state
+    for location in locations :
+        osm_path = osm_file_path + location
         for file in os.listdir(osm_path):
             if file.endswith('.pbf') :
                 state_data = osm_path + '/' + file
-        extract_pois_from_osm(state_data,osm_path+f"/{state}.csv")
-        print(f"{state} POIs extracted! ")
+        extract_pois_from_osm(state_data,osm_path+f"/{location}.csv")
+        print(f"{location} POIs extracted! ")
 
     print("All POI DATA extracted!")
 
