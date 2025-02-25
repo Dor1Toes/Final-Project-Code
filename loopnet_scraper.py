@@ -109,10 +109,10 @@ def scrape_property_data(base_url):
 
     # Save data to CSV
     df = pd.DataFrame(all_property_data)
-    df.to_csv("loopnet_property_list_Tucson.csv", index=False)
+    df.to_csv("loopnet_property_list.csv", index=False)
 
     driver.quit()
     print(f"Scraping completed. Extracted {len(all_property_data)} listings and saved to 'loopnet_property_list.csv'.")
 
-url='https://www.loopnet.ca/search/restaurants/az--usa/for-lease/?sk=ac604e173ef4cf5b8d2a68e8963af9c2&bb=-5oi6lk_3Lr162knhB'
+url='https://www.loopnet.ca/search/restaurants/london-england--united-kingdom/for-lease/?sk=849c975899974a0e03980fb1fce8561c'
 scrape_property_data(url)
